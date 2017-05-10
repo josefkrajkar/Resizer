@@ -24,3 +24,4 @@ For more informations about using this library, please refer the example.html fi
 TODO list:
 - Use class isntead of several functions
 - Use React
+- Add comments
