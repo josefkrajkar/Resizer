@@ -5,7 +5,7 @@ Description:
 
 This is a simple javascript React library that contains component for dynamic changes of width and height of chosen html container.
 
-Important nots:
+Important notes:
 This branch is now heavy "WIP"
 
 TODO list:
