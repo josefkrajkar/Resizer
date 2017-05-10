@@ -3,7 +3,7 @@ Javascript resizer component
 
 Description:
 
-This is a simple javscript library that contains several functions for dynamic changes of width and height of the chosen html container.
+This is a simple javascript library that contains several functions for dynamic changes of width and height of the chosen html container.
 
 Important note:
 
