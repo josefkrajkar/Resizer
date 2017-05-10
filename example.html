@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resizer example</title>
+    <style>
+        #container1 {
+            width: 329px;
+            height: 254px;
+            background-image: url("images/chuck.jpg");
+        }
+        #container2 {
+            width: 329px;
+            height: 254px;
+            background-image: url("images/chuck.jpg");
+        }
+        #container3 {
+            width: 329px;
+            height: 254px;
+            background-image: url("images/chuck.jpg");
+        }
+        #horizontal_box {
+            width: 100%;
+            height: 100%;
+            cursor: ew-resize;
+        }
+        #vertical_box {
+            width: 100%;
+            height: 100%;
+            cursor: ns-resize;
+        }
+        #both_box {
+            width: 100%;
+            height: 100%;
+            cursor: se-resize;
+        }
+    </style>
+    <script src="scripts/resizer.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+Horizontal resizer:
+<br><br>
+<div id="container1">
+    <div id="horizontal_box">
+	    <img draggable="false" width=100% height=100% src="images/avocado.jpg">
+    </div>
+</div>
+<br>
+Vertical resizer:
+<br><br>
+<div id="container2">
+    <div id="vertical_box">
+	<img draggable="false" width=100% height=100% src="images/avocado.jpg">
+</div>
+</div>
+<br>
+
+Both resizers:
+<br><br>
+<div id="container3">
+    <div id="both_box">
+	<img draggable="false" width=100% height=100% src="images/avocado.jpg">
+</div>
+</div>
+
+<br>
+
+<script>
+    let hor_box = document.getElementById('horizontal_box');
+    hor_box.addEventListener('mousedown', hor_Resize, false);
+
+    let ver_box = document.getElementById('vertical_box');
+    ver_box.addEventListener('mousedown', ver_Resize, false);
+
+    let both_box = document.getElementById('both_box');
+    both_box.addEventListener('mousedown', Resize, false);
+
+</script>
+</body>
+</html>
