@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React test</title>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+
+<div id="example"></div>
+
+<script type="text/babel">
+
+
+
+    const divStyle = {
+	width: "400px",
+	height: "400px",
+    clickme: true,
+    text: 'XY: ',
+    draggable: false,
+    background: 'blue',
+	},
+/*
+    imgStyle = {
+	width: '100%',
+	height: '100%',
+    draggable: false,
+	},
+
+    Obrazek = React.createClass ({
+    	getInitialState: function () {
+	    return imgStyle;
+	},
+
+	render: function() {
+	    return (<img src={this.props.zdroj} style={this.state}/>);
+	}
+    }),
+*/
+    Resizer = React.createClass ({
+
+	getInitialState: function() {
+         return divStyle;
+        },
+
+    clicked: function() {
+        if (this.state.clickme) {
+            this.setState({width: "200px",
+		height: "200px",
+            });
+        }
+        else {
+            this.setState({width: "400px",
+		height: "400px",
+            });
+        }
+	this.state.clickme = !this.state.clickme;
+    },
+
+    endit: function () {
+	    window.removeEventListener('mousemove',this.moveandchange,false);
+    },
+
+    change: function() {
+ 	    window.addEventListener("mousemove",this.moveandchange,false);
+    },
+
+    moveandchange: function(e) {
+        this.setState({
+            text: e.clientX+','+e.clientY,
+        })
+    },
+
+    render: function () {
+	    return(
+	        <div>
+            <p>{this.state.text}</p>
+            <div style={this.state} onMouseDown={this.change} onMouseUp={this.endit} onMouseOut={this.endit}>{this.props.children}</div>
+	        </div>
+        );
+    }
+});
+
+    ReactDOM.render(
+        <div>
+            <Resizer/>
+        </div>
+	,document.getElementById('example'));
+
+</script>
+
+</body>
+</html>
