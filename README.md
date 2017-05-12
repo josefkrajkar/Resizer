@@ -10,6 +10,6 @@ This branch is now heavy "WIP"
 
 TODO list:
 - Add events and eventhandlers - Done! :)
-- Add functions for dynamic changes of width and height
+- Add functions for dynamic changes of width and height - Done :)
 - Add comments
 - Separate React script from html file and save it as standalone library
