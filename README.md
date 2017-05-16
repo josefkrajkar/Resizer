@@ -15,9 +15,11 @@ How to use the Resizer:
 Please, make sure that you imported the file "resizer.js" into your code.
 Then you can add the the Resizer container and use following attributes if you want to:
 
-- <Resizer type="horizontal">...Resizable content...</Resizer> - make content horizontaly resizable 
-- <Resizer type="vertical">...Resizable content...</Resizer> - make content verticaly resizable 
-- <Resizer type="both">...Resizable content...</Resizer> - make content resizable horizontaly and verticaly
+
+- ```html <Resizer type="horizontal">...Resizable content...</Resizer>``` - make content horizontaly resizable 
+- ```html <Resizer type="vertical">...Resizable content...</Resizer>``` - make content verticaly resizable 
+- ```html <Resizer type="both">...Resizable content...</Resizer>``` - make content resizable horizontaly and verticaly
+
 
 Then you can click (or better double-click) the resizable content on your created webpage and dynamically change its width or height.
 For more informations about using this component, please refer the example folder in the repository or live example on josefkrajkar.czweb.org 
