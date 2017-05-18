@@ -22,6 +22,6 @@ Then you can add the the Resizer container and use following attributes if you w
 
 
 Then you can click (or better double-click) the resizable content on your created webpage and dynamically change its width or height.
-For more informations about using this component, please refer the example folder in the repository or live example on <a href="http://josefkrajkar.czweb.org">this webpage.</a>  
+For more informations about using this component, please download the static example in the repository onto your test server or refer to live example on <a href="http://josefkrajkar.czweb.org">this webpage.</a>  
 
 Thank you for your time and "May the Code Be With You"
