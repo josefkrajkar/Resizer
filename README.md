@@ -1,4 +1,4 @@
-# Resizer
+<a href="http://resizer.surge.sh/"><h5>Resizer</h5></a>
 Javascript resizer component
 
 Description:
