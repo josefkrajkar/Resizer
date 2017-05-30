@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
 
-//Hlavni trida ovlivnujici beh resizer komponenty
+//Main class responsible for the behaviour of the Resizer component
 class Resizer extends Component {
 
-    //metoda tridy s nastavenim stylu komponenty + nekolik pomocnych a testovacich vlastnosti
+    //method with setting of the several important properties
     constructor() {
         super();
         this.state = {
@@ -15,14 +15,14 @@ class Resizer extends Component {
         };
     }
 
-    //metoda volana po zvednuti tlacitka mysi, nebo po opusteni resizeru
+    //method called after the mousebutton is released or after the mouse curser is out of the Resizer component
     endChange() {
         this.setState({
             clicked: false,
         });
     }
 
-    //metoda volana po zmacknuti tlacitka mysi - zahajeni zmeny velikosti
+    //method called after the pressing of the mouse button - it will start chnages of width or height
     startChange(i) {
         this.setState({
             startX: i.clientX,
@@ -33,7 +33,7 @@ class Resizer extends Component {
         });
     }
 
-    //metoda volana pri pohybu mysi- zajistuje dynamickou zmenu velikosti podle daneho typu komponenty
+    //method called after the move of the mouse cursor. If the left mouse button is pressed, it will change the width or height of the component dynamically
     moveAndChange(e) {
         if (this.state.clicked) {
             if (this.props.type === "horizontal" || this.props.type === "both") {
@@ -50,7 +50,7 @@ class Resizer extends Component {
         }
     }
 
-    //metoda pro renderovani vysledku
+    //method for proper rendering 
     render() {
         return(
             <div
