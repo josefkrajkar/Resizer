@@ -33,6 +33,6 @@ Thank you for your time and "May the Code Be With You"
 
 TODO list:
 - create a proper repository using react-create-app - Done :)
-- translate comments to English
+- translate comments to English - Done :)
 - write unit tests using Enzyme and Jest
 - Implement Flow
