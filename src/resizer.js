@@ -1,7 +1,19 @@
+// @flow
 import React,{Component} from 'react';
+
 
 //Main class responsible for the behaviour of the Resizer component
 class Resizer extends Component {
+    
+    state: {
+        startX: number,
+        startY: number,
+        startWidth: number,
+        startHeight: number,
+        clicked: boolean,
+        width: string,
+        height: string,
+    }
 
     //method with setting of the several important properties
     constructor() {
@@ -12,7 +24,11 @@ class Resizer extends Component {
             startWidth: 0,
             startHeight: 0,
             clicked: false,
+            width: '',
+            height: '',
         };
+        //{startX: number, startY: number, startWidth: number, startHeight: number, clicked: boolean};
+
     }
 
     //method called after the mousebutton is released or after the mouse curser is out of the Resizer component
@@ -23,7 +39,8 @@ class Resizer extends Component {
     }
 
     //method called after the pressing of the mouse button - it will start chnages of width or height
-    startChange(i) {
+    startChange(i: MouseEvent) {
+
         this.setState({
             startX: i.clientX,
             startY: i.clientY,
@@ -33,13 +50,15 @@ class Resizer extends Component {
         });
     }
 
-    //method called after the move of the mouse cursor. If the left mouse button is pressed, it will change the width or height of the component dynamically
-    moveAndChange(e) {
+    //method called after the move of the mouse cursor. If the left mouse button is pressed, it will change the width or height of the component dynamically   
+      moveAndChange(e: MouseEvent) {
+        
         if (this.state.clicked) {
             if (this.props.type === "horizontal" || this.props.type === "both") {
                 this.setState({
                     width: (this.state.startWidth + e.clientX - this.state.startX) + 'px',
-                    height: this.state.startHeight,
+                    height: this.state.startHeight + 'px',
+
                 });
             }
             if (this.props.type === "vertical" || this.props.type === "both") {
