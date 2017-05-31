@@ -35,4 +35,4 @@ TODO list:
 - create a proper repository using react-create-app - Done :)
 - translate comments to English - Done :)
 - Implement Flow - Done :)
-- write unit tests using Enzyme and Jest
+- write unit tests using Enzyme and Jest - done :)
