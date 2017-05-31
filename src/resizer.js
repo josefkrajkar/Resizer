@@ -11,21 +11,25 @@ class Resizer extends Component {
         startWidth: number,
         startHeight: number,
         clicked: boolean,
-        width: string,
-        height: string,
+        style: {
+            width: string,
+            height: string
+        }
     }
 
     //method with setting of the several important properties
     constructor() {
         super();
         this.state = {
+            style: {
+                width: '',
+                height: ''
+            },
             startX: 0,
             startY: 0,
             startWidth: 0,
             startHeight: 0,
             clicked: false,
-            width: '',
-            height: '',
         };
         //{startX: number, startY: number, startWidth: number, startHeight: number, clicked: boolean};
 
@@ -54,16 +58,28 @@ class Resizer extends Component {
       moveAndChange(e: MouseEvent) {
         
         if (this.state.clicked) {
-            if (this.props.type === "horizontal" || this.props.type === "both") {
+            if (this.props.type === "horizontal") {
                 this.setState({
-                    width: (this.state.startWidth + e.clientX - this.state.startX) + 'px',
-                    height: this.state.startHeight + 'px',
-
+                    style: {
+                        width: (this.state.startWidth + e.clientX - this.state.startX) + 'px',
+                        height: (this.state.startHeight) + 'px',
+                    }
                 });
             }
-            if (this.props.type === "vertical" || this.props.type === "both") {
+            else if (this.props.type === "vertical") {
                 this.setState({
-                    height: (this.state.startHeight + e.clientY - this.state.startY) + 'px',
+                    style: {
+                        height: (this.state.startHeight + e.clientY - this.state.startY) + 'px',
+                        width: (this.state.startWidth) + 'px',
+                    }
+                })
+            }
+            else if (this.props.type === "both") {
+                this.setState({
+                    style: {
+                        height: (this.state.startHeight + e.clientY - this.state.startY) + 'px',
+                        width: (this.state.startWidth + e.clientX - this.state.startX) + 'px',
+                    }
                 })
             }
         }
@@ -73,7 +89,7 @@ class Resizer extends Component {
     render() {
         return(
             <div
-                style={this.state}
+                style={this.state.style}
                 onMouseMove={(e) => this.moveAndChange(e)}
                 onMouseDown={(e) => this.startChange(e)}
                 onMouseUp={() => this.endChange()}
