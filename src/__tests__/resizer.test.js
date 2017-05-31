@@ -11,6 +11,10 @@ it('renders props correctly', () => {
   const component = shallow(<Resizer name="resizer"/>);
   expect(component.instance().props.name).toBe('resizer');
 });
+it('renders children when passed in', () => {
+  const component = shallow(<Resizer><div className="unique" /></Resizer> );
+  expect(component.contains(<div className="unique" />)).toBe(true);
+});
 });
 
 describe('<Resizer/> - events', () => {
