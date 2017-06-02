@@ -5,6 +5,7 @@ import React,{Component} from 'react';
 //Main class responsible for the behaviour of the Resizer component
 class Resizer extends Component {
     
+    //Declarations for Flow
     state: {
         startX: number,
         startY: number,
@@ -31,8 +32,7 @@ class Resizer extends Component {
             startHeight: 0,
             clicked: false,
         };
-        //{startX: number, startY: number, startWidth: number, startHeight: number, clicked: boolean};
-
+        
     }
 
     //method called after the mousebutton is released or after the mouse curser is out of the Resizer component
